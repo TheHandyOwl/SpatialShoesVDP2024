@@ -5,7 +5,9 @@
 # Project
 
 This is the practice for the Visual Development Program 2024.
+
 We have to build a 3D environment of a sneaker showcase.
+
 Disclaimer: Sorry, I don't own an Apple Vision Pro. I have no way to test the immersive space part.
 
 ## Tasks to be performed:
@@ -23,5 +25,5 @@ Disclaimer: Sorry, I don't own an Apple Vision Pro. I have no way to test the im
 Steps:
 
 1. Clone this repository and open 'SpatialShoesVDP2024.xcodeproj' file
-2. Check Vision 'scheme'
+2. Check 'scheme' and 'Apple Vision Pro' device
 3. Build and run
