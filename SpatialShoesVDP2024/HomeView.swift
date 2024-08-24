@@ -28,7 +28,10 @@ struct HomeView: View {
             switch selectedSection?.data {
             case .beLucky(let shoe):
                 ShoeDetailView(shoe: shoe)
-            case .byBrand(let sections):
+            case .byBrand(let sections),
+                    .byPrice(let sections),
+                    .byMaterial(let sections),
+                    .byType(let sections):
                 NavigationStack {
                     ShoeCarouselListView(sections: sections)
                         .navigationTitle(selectedSection?.title ?? "")
