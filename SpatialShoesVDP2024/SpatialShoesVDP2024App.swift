@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct SpatialShoesVDP2024App: App {
+    
+    @State private var shoesVM = ShoesViewModel()
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup(id: "mainWindow") {
+            HomeView()
+                .frame(minWidth: 1280, maxWidth: 2560, minHeight: 720, maxHeight: 1440)
+                .environment(shoesVM)
         }
+        .windowResizability(.contentSize)
     }
 }
