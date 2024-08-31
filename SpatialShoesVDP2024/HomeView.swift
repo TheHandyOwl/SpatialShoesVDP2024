@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct HomeView: View {
     
     @Environment(ShoesViewModel.self) private var shoesVM

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D2909A32C725E80005B1BE4 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 1D2909A22C725E80005B1BE4 /* RealityKitContent */; };
 		1D2909A52C725E80005B1BE4 /* SpatialShoesVDP2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2909A42C725E80005B1BE4 /* SpatialShoesVDP2024App.swift */; };
 		1D2909A92C725E82005B1BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2909A82C725E82005B1BE4 /* Assets.xcassets */; };
 		1D2909AC2C725E82005B1BE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2909AB2C725E82005B1BE4 /* Preview Assets.xcassets */; };
@@ -26,13 +25,13 @@
 		1D4F9CBE2C7914B40024F574 /* ShoeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F9CBD2C7914B40024F574 /* ShoeDetailView.swift */; };
 		1D4F9CC62C7943A30024F574 /* ShoeCarrouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F9CC52C7943A30024F574 /* ShoeCarrouselCell.swift */; };
 		1D4F9CCF2C7958510024F574 /* Fonts+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F9CCE2C7958510024F574 /* Fonts+Extension.swift */; };
+		1DB24DAE2C7BA0EC0025CE13 /* SpatialShoesVDP2024__3DAssets in Frameworks */ = {isa = PBXBuildFile; productRef = 1DB24DAD2C7BA0EC0025CE13 /* SpatialShoesVDP2024__3DAssets */; };
 		1DC09E212C7A2F8A00CFEEE4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D468F2D2C7A11DA00AAD4C1 /* Montserrat-Regular.ttf */; };
 		1DC09E222C7A2F8E00CFEEE4 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D468F2C2C7A11DA00AAD4C1 /* Montserrat-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D29099D2C725E80005B1BE4 /* SpatialShoesVDP2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialShoesVDP2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D2909A12C725E80005B1BE4 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		1D2909A42C725E80005B1BE4 /* SpatialShoesVDP2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpatialShoesVDP2024App.swift; sourceTree = "<group>"; };
 		1D2909A82C725E82005B1BE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D2909AB2C725E82005B1BE4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		1D4F9CBD2C7914B40024F574 /* ShoeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailView.swift; sourceTree = "<group>"; };
 		1D4F9CC52C7943A30024F574 /* ShoeCarrouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeCarrouselCell.swift; sourceTree = "<group>"; };
 		1D4F9CCE2C7958510024F574 /* Fonts+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+Extension.swift"; sourceTree = "<group>"; };
+		1DB24DAB2C7BA05B0025CE13 /* SpatialShoesVDP2024__3DAssets */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SpatialShoesVDP2024__3DAssets; path = ../../SpatialShoesVDP2024__3DAssets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D2909A32C725E80005B1BE4 /* RealityKitContent in Frameworks */,
+				1DB24DAE2C7BA0EC0025CE13 /* SpatialShoesVDP2024__3DAssets in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +74,7 @@
 				1D29099F2C725E80005B1BE4 /* SpatialShoesVDP2024 */,
 				1D2909A02C725E80005B1BE4 /* Packages */,
 				1D29099E2C725E80005B1BE4 /* Products */,
+				1DB24DAC2C7BA0EC0025CE13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,7 +106,7 @@
 		1D2909A02C725E80005B1BE4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				1D2909A12C725E80005B1BE4 /* RealityKitContent */,
+				1DB24DAB2C7BA05B0025CE13 /* SpatialShoesVDP2024__3DAssets */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -209,6 +210,13 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		1DB24DAC2C7BA0EC0025CE13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,7 +234,7 @@
 			);
 			name = SpatialShoesVDP2024;
 			packageProductDependencies = (
-				1D2909A22C725E80005B1BE4 /* RealityKitContent */,
+				1DB24DAD2C7BA0EC0025CE13 /* SpatialShoesVDP2024__3DAssets */,
 			);
 			productName = SpatialShoesVDP2024;
 			productReference = 1D29099D2C725E80005B1BE4 /* SpatialShoesVDP2024.app */;
@@ -499,9 +507,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1D2909A22C725E80005B1BE4 /* RealityKitContent */ = {
+		1DB24DAD2C7BA0EC0025CE13 /* SpatialShoesVDP2024__3DAssets */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = RealityKitContent;
+			productName = SpatialShoesVDP2024__3DAssets;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
