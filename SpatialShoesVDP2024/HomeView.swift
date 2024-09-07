@@ -22,7 +22,7 @@ struct HomeView: View {
                 }
             }
             .navigationSplitViewColumnWidth(250)
-            .navigationTitle("Showroom")
+            .navigationTitle("Spatial shoes")
         } detail: {
             switch selectedSection?.data {
             case .beLucky(let shoe):
@@ -41,8 +41,6 @@ struct HomeView: View {
                     Text("Selecciona una opción para ver la información.")
                         .font(.myBody)
                         .padding()
-                    Image(systemName: "shoe.2.fill")
-                        .symbolEffect(.pulse)
                 }
             }
         }

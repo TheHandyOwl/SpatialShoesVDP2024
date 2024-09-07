@@ -25,7 +25,7 @@ struct ShoeCarrouselCell: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 4) {
-            Image(systemName: "shoe.2.fill")
+            Image(shoe.model3DName)
                 .resizable()
                 .scaledToFit()
                 .padding(16)
@@ -38,10 +38,10 @@ struct ShoeCarrouselCell: View {
                         corners: [.topLeft, .topRight]))
             VStack(alignment: .leading, spacing: 4) {
                 HStack(alignment: .top) {
-                    Text("Name:")
+                    Text("Nombre:")
                         .font(.myHeadline)
                         .bold()
-                        .frame(width: 64, alignment: .topLeading)
+                        .frame(width: 80, alignment: .topLeading)
                     Text(shoe.name)
                         .font(.myHeadline)
                         .bold()
@@ -50,9 +50,9 @@ struct ShoeCarrouselCell: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 HStack(alignment: .top) {
-                    Text("Brand:")
+                    Text("Marca:")
                         .font(.myHeadline)
-                        .frame(width: 64, alignment: .topLeading)
+                        .frame(width: 80, alignment: .topLeading)
                     Text(shoe.brand.rawValue)
                         .font(.myHeadline)
                         .lineLimit(1)
@@ -60,10 +60,10 @@ struct ShoeCarrouselCell: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 HStack(alignment: .top) {
-                    Text("Size:")
+                    Text("Tamaño:")
                         .font(.myHeadline)
-                        .frame(width: 64, alignment: .topLeading)
-                    Text(shoe.size.sorted().map { "\($0)" }.joined(separator: ", "))
+                        .frame(width: 80, alignment: .topLeading)
+                    Text(shoe.size.sorted().map { Bool.random() ? "\($0), \($0)" : "\($0)" }.joined(separator: ", "))
                         .font(.myHeadline)
                         .lineLimit(2)
                         .truncationMode(.middle)
@@ -74,7 +74,7 @@ struct ShoeCarrouselCell: View {
                         .font(.myHeadline)
                         .bold()
                         .padding(.top, 4)
-                        .frame(maxWidth: .infinity, alignment: .bottomTrailing)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                 }
             }
             .padding(.horizontal, 16)

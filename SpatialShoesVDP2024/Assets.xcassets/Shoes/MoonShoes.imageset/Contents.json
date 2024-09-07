@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "MoonShoes.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

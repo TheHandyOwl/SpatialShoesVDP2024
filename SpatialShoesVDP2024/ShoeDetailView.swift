@@ -21,20 +21,31 @@ struct ShoeDetailView: View {
             shoeInformation
                 .frame(minWidth: 300, alignment: .topLeading)
             shoe3D
-                .glassBackgroundEffect()
         }
+        .safeAreaPadding()
         .frame(
             maxWidth: .infinity,
             maxHeight: .infinity,
             alignment: .top)
-        .safeAreaPadding(32)
         .navigationTitle("\(shoe.brand.rawValue): \(shoe.name)")
         .toolbar {
             ToolbarItem(placement: .bottomOrnament) {
-                Toggle(isOn: $rotationIsEnabled) {
-                    Image(systemName: rotationIsEnabled ? "stop" : "play")
+                HStack(spacing: 30) {
+                    Button {
+                        print("--> Open")
+                    } label: {
+                        HStack {
+                            Image(systemName: "hand.tap.fill")
+                            Text("Experiencia interactiva")
+                                .frame(width: 200)
+                                .padding(10)
+                        }
+                    }
+                    .glassBackgroundEffect()
+                    Toggle(isOn: $rotationIsEnabled) {
+                        Image(systemName: rotationIsEnabled ? "stop" : "play")
+                    }
                 }
-                .frame(width: 100)
             }
         }
         .onAppear {
@@ -44,27 +55,32 @@ struct ShoeDetailView: View {
     
     private var shoeInformation: some View {
         Form {
-            Section(header: Text("Description").font(.myHeadline)) {
+            Section(header: Text("Descripción").font(.myHeadline)) {
                 Text(LocalizedStringKey(shoe.information))
                     .font(.myBody)
             }
-            Section(header: Text("Information").font(.myHeadline)) {
+            Section(header: Text("Información").font(.myHeadline)) {
                 LabeledContent(
-                    "**Size**",
+                    "**Tamaño**",
                     value: shoe.size.map { String($0) }
                         .joined(separator: ", "))
                 .font(.myBody)
-                LabeledContent(
-                    "**Colors**",
-                    value: shoe.colors.map(\.rawValue)
-                        .joined(separator: ", "))
+                LabeledContent("**Colores**") {
+                    HStack {
+                        ForEach(shoe.colors, id: \.self) { colorName in
+                            Circle()
+                                .fill(getColorsView(colorName))
+                                .frame(width: 20, height: 20) // Tamaño de los círculos
+                        }
+                    }
+                }
                 .font(.myBody)
                 LabeledContent(
-                    "**Typo**",
+                    "**Tipo**",
                     value: shoe.typeOf)
                 .font(.myBody)
                 LabeledContent(
-                    "**Materials**",
+                    "**Materiales**",
                     value: shoe.materials.joined(separator: ", "))
                 .font(.myBody)
             }
@@ -72,35 +88,26 @@ struct ShoeDetailView: View {
     }
     
     private var shoe3D: some View {
-        Model3D(named: shoe.model3DName, bundle: spatialShoesVDP2024__3DAssetsBundle) { shoe in
-            shoe
-                .resizable()
-                .scaledToFit()
-                .scaleEffect(0.5)
-                .rotation3DEffect(
-                    .degrees(rotationAngle),
-                    axis: (x: 0, y: 1, z: 0))
-        } placeholder: {
-            ZStack {
-                shoeImage
-                ProgressView()
-                    .background(
-                        Color.black.opacity(0.2)
-                    )
+        ZStack {
+            Model3D(named: shoe.model3DName, bundle: spatialShoesVDP2024__3DAssetsBundle) { shoe in
+                shoe
+                    .rotation3DEffect(
+                        .degrees(rotationAngle),
+                        axis: (x: 0, y: 1, z: 0))
+            } placeholder: {
+                Image(systemName: "shoe.2.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(16)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .symbolEffect(.pulse)
             }
+            .padding(64)
         }
-        .frame(maxWidth: 800, maxHeight: .infinity, alignment: .center)
-    }
-    
-    private var shoeImage: some View {
-        Image(systemName: "shoe.2.fill")
-            .resizable()
-            .scaledToFit()
-            .padding(16)
-            .aspectRatio(contentMode: .fit)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .symbolEffect(.pulse)
-            .glassBackgroundEffect()
+        .frame(maxWidth: .infinity)
+        .glassBackgroundEffect()
+        .frame(maxWidth: 400, maxHeight: .infinity, alignment: .center)
     }
     
     private func doRotation() {
@@ -110,6 +117,15 @@ struct ShoeDetailView: View {
             rotationAngle = angle < 360 ? angle : 0
         }
         RunLoop.current.add(rotationTimer, forMode: .common)
+    }
+    
+    private func getColorsView(_ colorName: ShoeModel.CustomColor) -> Color {
+        switch colorName {
+        case .blanco: .white
+        case .marrón:.brown
+        case .negro: .black
+        case .rojo: .red
+        }
     }
 }
 

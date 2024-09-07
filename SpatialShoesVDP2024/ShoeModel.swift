@@ -22,7 +22,7 @@ struct ShoeModel: Identifiable, Hashable {
     let origin: String
     let gender: Gender?
     let weight: Double
-    let colors: [Color]
+    let colors: [CustomColor]
     let warranty: Int
     let certifications: [String]
     
@@ -35,7 +35,7 @@ struct ShoeModel: Identifiable, Hashable {
         case unknoun = "N/A"
     }
     
-    enum Color: String, Codable {
+    enum CustomColor: String, Codable {
         case blanco = "Blanco"
         case marrón = "Marrón"
         case negro = "Negro"
@@ -63,7 +63,7 @@ struct ShoeModel: Identifiable, Hashable {
             origin: dto.origin,
             gender: ShoeModel.Gender(rawValue: dto.gender),
             weight: dto.weight,
-            colors: dto.colors.compactMap { ShoeModel.Color(rawValue: $0) },
+            colors: dto.colors.compactMap { ShoeModel.CustomColor(rawValue: $0) },
             warranty: dto.warranty,
             certifications: dto.certifications
         )

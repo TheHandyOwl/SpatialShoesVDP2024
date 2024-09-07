@@ -53,7 +53,7 @@
 		1D4F9CBD2C7914B40024F574 /* ShoeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailView.swift; sourceTree = "<group>"; };
 		1D4F9CC52C7943A30024F574 /* ShoeCarrouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeCarrouselCell.swift; sourceTree = "<group>"; };
 		1D4F9CCE2C7958510024F574 /* Fonts+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+Extension.swift"; sourceTree = "<group>"; };
-		1DB24DAB2C7BA05B0025CE13 /* SpatialShoesVDP2024__3DAssets */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SpatialShoesVDP2024__3DAssets; path = ../../SpatialShoesVDP2024__3DAssets; sourceTree = "<group>"; };
+		1D9E31EF2C83A7A8008A7B81 /* SpatialShoesVDP2024__3DAssets */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SpatialShoesVDP2024__3DAssets; path = ../../SpatialShoesVDP2024__3DAssets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				1D29099F2C725E80005B1BE4 /* SpatialShoesVDP2024 */,
-				1D2909A02C725E80005B1BE4 /* Packages */,
+				1D9E31EE2C83A794008A7B81 /* Packages */,
 				1D29099E2C725E80005B1BE4 /* Products */,
 				1DB24DAC2C7BA0EC0025CE13 /* Frameworks */,
 			);
@@ -101,14 +101,6 @@
 				1D2909AA2C725E82005B1BE4 /* Preview Content */,
 			);
 			path = SpatialShoesVDP2024;
-			sourceTree = "<group>";
-		};
-		1D2909A02C725E80005B1BE4 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				1DB24DAB2C7BA05B0025CE13 /* SpatialShoesVDP2024__3DAssets */,
-			);
-			path = Packages;
 			sourceTree = "<group>";
 		};
 		1D2909AA2C725E82005B1BE4 /* Preview Content */ = {
@@ -208,6 +200,14 @@
 				1D4F9CCE2C7958510024F574 /* Fonts+Extension.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		1D9E31EE2C83A794008A7B81 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				1D9E31EF2C83A7A8008A7B81 /* SpatialShoesVDP2024__3DAssets */,
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 		1DB24DAC2C7BA0EC0025CE13 /* Frameworks */ = {
