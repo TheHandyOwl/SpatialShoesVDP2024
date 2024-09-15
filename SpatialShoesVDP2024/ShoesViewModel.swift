@@ -14,11 +14,11 @@ struct MainSection: Identifiable {
     
     var title: String {
         switch data {
-        case .beLucky: "I'm feeling lucky!"
-        case .byBrand: "By brand"
-        case .byMaterial: "By material"
-        case .byPrice: "By price"
-        case .byType: "By type"
+        case .beLucky: "¡Voy a tener suerte!"
+        case .byBrand: "Por marca"
+        case .byMaterial: "Por material"
+        case .byPrice: "Por precio"
+        case .byType: "Por tipo"
         }
     }
 }

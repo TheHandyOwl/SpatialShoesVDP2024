@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D20CF3C2C8CB15E00B4FA50 /* ShoeWithGesturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D20CF3B2C8CB15E00B4FA50 /* ShoeWithGesturesView.swift */; };
 		1D2909A52C725E80005B1BE4 /* SpatialShoesVDP2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2909A42C725E80005B1BE4 /* SpatialShoesVDP2024App.swift */; };
 		1D2909A92C725E82005B1BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2909A82C725E82005B1BE4 /* Assets.xcassets */; };
 		1D2909AC2C725E82005B1BE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2909AB2C725E82005B1BE4 /* Preview Assets.xcassets */; };
@@ -25,12 +26,15 @@
 		1D4F9CBE2C7914B40024F574 /* ShoeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F9CBD2C7914B40024F574 /* ShoeDetailView.swift */; };
 		1D4F9CC62C7943A30024F574 /* ShoeCarrouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F9CC52C7943A30024F574 /* ShoeCarrouselCell.swift */; };
 		1D4F9CCF2C7958510024F574 /* Fonts+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F9CCE2C7958510024F574 /* Fonts+Extension.swift */; };
+		1D54466F2C93A38F00C85124 /* ShoeHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D54466E2C93A38F00C85124 /* ShoeHelpView.swift */; };
+		1D9D47B92C8CD6CC00D2447B /* CellListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9D47B82C8CD6CC00D2447B /* CellListButton.swift */; };
 		1DB24DAE2C7BA0EC0025CE13 /* SpatialShoesVDP2024__3DAssets in Frameworks */ = {isa = PBXBuildFile; productRef = 1DB24DAD2C7BA0EC0025CE13 /* SpatialShoesVDP2024__3DAssets */; };
 		1DC09E212C7A2F8A00CFEEE4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D468F2D2C7A11DA00AAD4C1 /* Montserrat-Regular.ttf */; };
 		1DC09E222C7A2F8E00CFEEE4 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D468F2C2C7A11DA00AAD4C1 /* Montserrat-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D20CF3B2C8CB15E00B4FA50 /* ShoeWithGesturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeWithGesturesView.swift; sourceTree = "<group>"; };
 		1D29099D2C725E80005B1BE4 /* SpatialShoesVDP2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialShoesVDP2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2909A42C725E80005B1BE4 /* SpatialShoesVDP2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpatialShoesVDP2024App.swift; sourceTree = "<group>"; };
 		1D2909A82C725E82005B1BE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,7 +57,9 @@
 		1D4F9CBD2C7914B40024F574 /* ShoeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailView.swift; sourceTree = "<group>"; };
 		1D4F9CC52C7943A30024F574 /* ShoeCarrouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeCarrouselCell.swift; sourceTree = "<group>"; };
 		1D4F9CCE2C7958510024F574 /* Fonts+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+Extension.swift"; sourceTree = "<group>"; };
-		1D9E31EF2C83A7A8008A7B81 /* SpatialShoesVDP2024__3DAssets */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SpatialShoesVDP2024__3DAssets; path = ../../SpatialShoesVDP2024__3DAssets; sourceTree = "<group>"; };
+		1D5446692C9375E500C85124 /* SpatialShoesVDP2024__3DAssets */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SpatialShoesVDP2024__3DAssets; path = ../../SpatialShoesVDP2024__3DAssets; sourceTree = "<group>"; };
+		1D54466E2C93A38F00C85124 /* ShoeHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeHelpView.swift; sourceTree = "<group>"; };
+		1D9D47B82C8CD6CC00D2447B /* CellListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellListButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,9 @@
 				1D4F9CC52C7943A30024F574 /* ShoeCarrouselCell.swift */,
 				1D41F0592C727E3700C71CF7 /* ShoeCarouselListView.swift */,
 				1D4F9CBD2C7914B40024F574 /* ShoeDetailView.swift */,
+				1D54466E2C93A38F00C85124 /* ShoeHelpView.swift */,
+				1D20CF3B2C8CB15E00B4FA50 /* ShoeWithGesturesView.swift */,
+				1D9D47B72C8CD6A200D2447B /* ViewComponent */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -202,10 +211,18 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		1D9D47B72C8CD6A200D2447B /* ViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				1D9D47B82C8CD6CC00D2447B /* CellListButton.swift */,
+			);
+			name = ViewComponent;
+			sourceTree = "<group>";
+		};
 		1D9E31EE2C83A794008A7B81 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				1D9E31EF2C83A7A8008A7B81 /* SpatialShoesVDP2024__3DAssets */,
+				1D5446692C9375E500C85124 /* SpatialShoesVDP2024__3DAssets */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -298,13 +315,16 @@
 				1D41F05A2C727E3700C71CF7 /* ShoeCarouselListView.swift in Sources */,
 				1D41F0512C7272F800C71CF7 /* ShoeDTO.swift in Sources */,
 				1D41F0482C72726900C71CF7 /* JSONInteractor.swift in Sources */,
+				1D20CF3C2C8CB15E00B4FA50 /* ShoeWithGesturesView.swift in Sources */,
 				1D41F0412C7271AC00C71CF7 /* DataInteractor.swift in Sources */,
 				1D41F05E2C7287C300C71CF7 /* Previews.swift in Sources */,
 				1D4F9CCF2C7958510024F574 /* Fonts+Extension.swift in Sources */,
+				1D9D47B92C8CD6CC00D2447B /* CellListButton.swift in Sources */,
 				1D41F04D2C7272DD00C71CF7 /* ShoeModel.swift in Sources */,
 				1D4F9CC62C7943A30024F574 /* ShoeCarrouselCell.swift in Sources */,
 				1D41F0562C727DA200C71CF7 /* DataTest.swift in Sources */,
 				1D2909A52C725E80005B1BE4 /* SpatialShoesVDP2024App.swift in Sources */,
+				1D54466F2C93A38F00C85124 /* ShoeHelpView.swift in Sources */,
 				1D4112DB2C75022500CF9B61 /* HomeView.swift in Sources */,
 				1D41F0612C72882600C71CF7 /* ShoeModel+Extension.swift in Sources */,
 				1D41F05C2C72809900C71CF7 /* ShoesViewModel.swift in Sources */,

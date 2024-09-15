@@ -15,6 +15,8 @@ struct GenericCarrouselSectionData: Identifiable {
 
 struct ShoeCarouselListView: View {
     
+    @Environment(ShoesViewModel.self) private var shoeVM
+    
     let sections: [GenericCarrouselSectionData]
     
     var body: some View {
@@ -30,8 +32,7 @@ struct ShoeCarouselListView: View {
                                 NavigationLink(destination: ShoeDetailView(shoe: shoe)) {
                                     ShoeCarrouselCell(shoe: shoe)
                                 }
-                                .buttonStyle(.plain)
-                                .buttonBorderShape(.roundedRectangle(radius: 32))
+                                .buttonStyle(CellListButton())
                             }
                         }
                         .safeAreaPadding(.horizontal)
@@ -46,8 +47,11 @@ struct ShoeCarouselListView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    NavigationStack {
-        ShoeCarouselListView.preview
-            .padding()
+    VStack {
+        NavigationStack {
+            ShoeCarouselListView.preview
+                .padding()
+        }
     }
+    .environment(ShoesViewModel())
 }

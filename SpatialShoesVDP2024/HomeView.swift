@@ -22,7 +22,7 @@ struct HomeView: View {
                 }
             }
             .navigationSplitViewColumnWidth(250)
-            .navigationTitle("Spatial shoes")
+            .navigationTitle("Catálogo")
         } detail: {
             switch selectedSection?.data {
             case .beLucky(let shoe):

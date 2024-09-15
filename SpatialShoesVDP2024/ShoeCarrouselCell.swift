@@ -101,4 +101,5 @@ struct ShoeCarrouselCell: View {
         ShoeCarouselListView.preview
             .padding()
     }
+    .environment(ShoesViewModel())
 }

@@ -19,5 +19,11 @@ struct SpatialShoesVDP2024App: App {
                 .environment(shoesVM)
         }
         .windowResizability(.contentSize)
+        WindowGroup(id: "shoeGesture") {
+            ShoeWithGesturesView()
+                .frame(minWidth: 1280, maxWidth: 2560, minHeight: 720, maxHeight: 1440)
+                .environment(shoesVM)
+        }
+        .windowResizability(.contentSize)
     }
 }

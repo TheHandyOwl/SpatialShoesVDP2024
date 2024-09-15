@@ -11,8 +11,10 @@ import SpatialShoesVDP2024__3DAssets
 
 struct ShoeDetailView: View {
     
+    @Environment(ShoesViewModel.self) private var shoesVM
+    @Environment(\.openWindow) private var openWindow
+    
     @State private var rotationAngle = 0.0
-    @State private var rotationIsEnabled = true
     
     let shoe: ShoeModel
     
@@ -30,26 +32,22 @@ struct ShoeDetailView: View {
         .navigationTitle("\(shoe.brand.rawValue): \(shoe.name)")
         .toolbar {
             ToolbarItem(placement: .bottomOrnament) {
-                HStack(spacing: 30) {
-                    Button {
-                        print("--> Open")
-                    } label: {
-                        HStack {
-                            Image(systemName: "hand.tap.fill")
-                            Text("Experiencia interactiva")
-                                .frame(width: 200)
-                                .padding(10)
-                        }
-                    }
-                    .glassBackgroundEffect()
-                    Toggle(isOn: $rotationIsEnabled) {
-                        Image(systemName: rotationIsEnabled ? "stop" : "play")
+                Button {
+                    shoesVM.selectedShoe = shoe
+                    openWindow(id: "shoeGesture")
+                } label: {
+                    HStack {
+                        Image(systemName: "hand.tap.fill")
+                        Text("Experiencia interactiva")
+                            .frame(width: 200)
+                            .padding(10)
                     }
                 }
+                .glassBackgroundEffect()
             }
         }
         .onAppear {
-            self.doRotation()
+            doRotation()
         }
     }
     
@@ -112,7 +110,6 @@ struct ShoeDetailView: View {
     
     private func doRotation() {
         let rotationTimer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { _ in
-            guard rotationIsEnabled else { return }
             let angle = rotationAngle + 0.2
             rotationAngle = angle < 360 ? angle : 0
         }
@@ -133,4 +130,5 @@ struct ShoeDetailView: View {
     NavigationStack {
         ShoeDetailView.preview
     }
+    .environment(ShoesViewModel())
 }
