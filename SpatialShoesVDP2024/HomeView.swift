@@ -35,6 +35,10 @@ struct HomeView: View {
                     ShoeCarouselListView(sections: sections)
                         .navigationTitle(selectedSection?.title ?? "")
                         .id(selectedSection?.id)
+                }       
+            case .favoriteShoes:
+                NavigationStack {
+                    ShoeFavoriteListView()
                 }
             default:
                 VStack {

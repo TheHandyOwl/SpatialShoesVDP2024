@@ -16,7 +16,7 @@ struct ShoeDetailView: View {
     
     @State private var rotationAngle = 0.0
     
-    let shoe: ShoeModel
+    @State var shoe: ShoeModel
     
     var body: some View {
         HStack(alignment: .top, spacing: 32) {
@@ -53,13 +53,26 @@ struct ShoeDetailView: View {
     
     private var shoeInformation: some View {
         Form {
+            Section(header: Text("Favorito").font(.myHeadline)) {
+                HStack {
+                    Button {
+                        shoe.isFavorite.toggle()
+                        shoesVM.toggleFavorite(shoe: shoe)
+                    } label: {
+                        Image(systemName: shoe.isFavorite ? "star.fill" : "star")
+                            .foregroundColor(shoe.isFavorite ? .yellow : .white)
+                    }
+                    Text(shoe.isFavorite ? "¡Te encanta!" : "Seleccionar como favorito")
+                }
+                .frame(width: .infinity, alignment: .leading)
+            }
             Section(header: Text("Descripción").font(.myHeadline)) {
                 Text(LocalizedStringKey(shoe.information))
                     .font(.myBody)
             }
             Section(header: Text("Información").font(.myHeadline)) {
                 LabeledContent(
-                    "**Tamaño**",
+                    "**Tallas**",
                     value: shoe.size.map { String($0) }
                         .joined(separator: ", "))
                 .font(.myBody)
@@ -68,7 +81,7 @@ struct ShoeDetailView: View {
                         ForEach(shoe.colors, id: \.self) { colorName in
                             Circle()
                                 .fill(getColorsView(colorName))
-                                .frame(width: 20, height: 20) // Tamaño de los círculos
+                                .frame(width: 20, height: 20)
                         }
                     }
                 }

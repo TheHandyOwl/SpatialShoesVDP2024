@@ -23,6 +23,9 @@
 		1D41F05C2C72809900C71CF7 /* ShoesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41F05B2C72809900C71CF7 /* ShoesViewModel.swift */; };
 		1D41F05E2C7287C300C71CF7 /* Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41F05D2C7287C300C71CF7 /* Previews.swift */; };
 		1D41F0612C72882600C71CF7 /* ShoeModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41F0602C72882600C71CF7 /* ShoeModel+Extension.swift */; };
+		1D4F97242C97597900042C81 /* ShoeFavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F97232C97597900042C81 /* ShoeFavoriteListView.swift */; };
+		1D4F97262C975AFC00042C81 /* ShoeFavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F97252C975AFC00042C81 /* ShoeFavoriteCell.swift */; };
+		1D4F97282C975B5000042C81 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F97272C975B5000042C81 /* RoundedCorner.swift */; };
 		1D4F9CBE2C7914B40024F574 /* ShoeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F9CBD2C7914B40024F574 /* ShoeDetailView.swift */; };
 		1D4F9CC62C7943A30024F574 /* ShoeCarrouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F9CC52C7943A30024F574 /* ShoeCarrouselCell.swift */; };
 		1D4F9CCF2C7958510024F574 /* Fonts+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F9CCE2C7958510024F574 /* Fonts+Extension.swift */; };
@@ -54,10 +57,13 @@
 		1D41F0602C72882600C71CF7 /* ShoeModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShoeModel+Extension.swift"; sourceTree = "<group>"; };
 		1D468F2C2C7A11DA00AAD4C1 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		1D468F2D2C7A11DA00AAD4C1 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		1D4F97222C97572A00042C81 /* SpatialShoesVDP2024__3DAssets */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SpatialShoesVDP2024__3DAssets; path = ../../SpatialShoesVDP2024__3DAssets; sourceTree = "<group>"; };
+		1D4F97232C97597900042C81 /* ShoeFavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeFavoriteListView.swift; sourceTree = "<group>"; };
+		1D4F97252C975AFC00042C81 /* ShoeFavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeFavoriteCell.swift; sourceTree = "<group>"; };
+		1D4F97272C975B5000042C81 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		1D4F9CBD2C7914B40024F574 /* ShoeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeDetailView.swift; sourceTree = "<group>"; };
 		1D4F9CC52C7943A30024F574 /* ShoeCarrouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeCarrouselCell.swift; sourceTree = "<group>"; };
 		1D4F9CCE2C7958510024F574 /* Fonts+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+Extension.swift"; sourceTree = "<group>"; };
-		1D5446692C9375E500C85124 /* SpatialShoesVDP2024__3DAssets */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SpatialShoesVDP2024__3DAssets; path = ../../SpatialShoesVDP2024__3DAssets; sourceTree = "<group>"; };
 		1D54466E2C93A38F00C85124 /* ShoeHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeHelpView.swift; sourceTree = "<group>"; };
 		1D9D47B82C8CD6CC00D2447B /* CellListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellListButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,13 +191,23 @@
 			isa = PBXGroup;
 			children = (
 				1D4F9CC52C7943A30024F574 /* ShoeCarrouselCell.swift */,
+				1D4F97252C975AFC00042C81 /* ShoeFavoriteCell.swift */,
 				1D41F0592C727E3700C71CF7 /* ShoeCarouselListView.swift */,
 				1D4F9CBD2C7914B40024F574 /* ShoeDetailView.swift */,
+				1D4F97232C97597900042C81 /* ShoeFavoriteListView.swift */,
 				1D54466E2C93A38F00C85124 /* ShoeHelpView.swift */,
 				1D20CF3B2C8CB15E00B4FA50 /* ShoeWithGesturesView.swift */,
 				1D9D47B72C8CD6A200D2447B /* ViewComponent */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		1D4F97292C975C3200042C81 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				1D4F97272C975B5000042C81 /* RoundedCorner.swift */,
+			);
+			name = SwiftUI;
 			sourceTree = "<group>";
 		};
 		1D4F9CCA2C7944EE0024F574 /* PreviewExtension */ = {
@@ -206,6 +222,7 @@
 		1D4F9CCD2C79582F0024F574 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1D4F97292C975C3200042C81 /* SwiftUI */,
 				1D4F9CCE2C7958510024F574 /* Fonts+Extension.swift */,
 			);
 			name = Components;
@@ -222,7 +239,7 @@
 		1D9E31EE2C83A794008A7B81 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				1D5446692C9375E500C85124 /* SpatialShoesVDP2024__3DAssets */,
+				1D4F97222C97572A00042C81 /* SpatialShoesVDP2024__3DAssets */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -319,10 +336,13 @@
 				1D41F0412C7271AC00C71CF7 /* DataInteractor.swift in Sources */,
 				1D41F05E2C7287C300C71CF7 /* Previews.swift in Sources */,
 				1D4F9CCF2C7958510024F574 /* Fonts+Extension.swift in Sources */,
+				1D4F97262C975AFC00042C81 /* ShoeFavoriteCell.swift in Sources */,
 				1D9D47B92C8CD6CC00D2447B /* CellListButton.swift in Sources */,
 				1D41F04D2C7272DD00C71CF7 /* ShoeModel.swift in Sources */,
 				1D4F9CC62C7943A30024F574 /* ShoeCarrouselCell.swift in Sources */,
+				1D4F97282C975B5000042C81 /* RoundedCorner.swift in Sources */,
 				1D41F0562C727DA200C71CF7 /* DataTest.swift in Sources */,
+				1D4F97242C97597900042C81 /* ShoeFavoriteListView.swift in Sources */,
 				1D2909A52C725E80005B1BE4 /* SpatialShoesVDP2024App.swift in Sources */,
 				1D54466F2C93A38F00C85124 /* ShoeHelpView.swift in Sources */,
 				1D4112DB2C75022500CF9B61 /* HomeView.swift in Sources */,

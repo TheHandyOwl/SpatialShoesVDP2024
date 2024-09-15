@@ -15,7 +15,7 @@ struct GenericCarrouselSectionData: Identifiable {
 
 struct ShoeCarouselListView: View {
     
-    @Environment(ShoesViewModel.self) private var shoeVM
+    @Environment(ShoesViewModel.self) private var shoesVM
     
     let sections: [GenericCarrouselSectionData]
     

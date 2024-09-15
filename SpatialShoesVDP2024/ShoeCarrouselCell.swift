@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-struct RoundedCorner: Shape {
-    
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
-    
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
-
-
 struct ShoeCarrouselCell: View {
     
     let shoe: ShoeModel
@@ -60,10 +48,10 @@ struct ShoeCarrouselCell: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 HStack(alignment: .top) {
-                    Text("Tamaño:")
+                    Text("Tallas:")
                         .font(.myHeadline)
                         .frame(width: 80, alignment: .topLeading)
-                    Text(shoe.size.sorted().map { Bool.random() ? "\($0), \($0)" : "\($0)" }.joined(separator: ", "))
+                    Text(shoe.size.sorted().map { "\($0)" }.joined(separator: ", "))
                         .font(.myHeadline)
                         .lineLimit(2)
                         .truncationMode(.middle)

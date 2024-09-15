@@ -16,8 +16,14 @@ extension HomeView {
 
 extension ShoeCarrouselCell {
     static var preview: some View {
-        ShoeCarrouselCell(
-            shoe: ShoeModel.shoeMock
+        ShoeCarrouselCell(shoe: ShoeModel.shoeMock)
+    }
+}
+
+extension ShoeFavoriteCell {
+    static var preview: some View {
+        ShoeFavoriteCell(
+            shoe: ShoeModel.shoeMock, rotationAngle: .constant(0.0)
         )
     }
 }
@@ -32,6 +38,12 @@ extension ShoeCarouselListView {
                 )
             ]
         )
+    }
+}
+
+extension ShoeFavoriteListView {
+    static var preview: some View {
+        ShoeFavoriteListView()
     }
 }
 

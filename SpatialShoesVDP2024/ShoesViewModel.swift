@@ -19,6 +19,7 @@ struct MainSection: Identifiable {
         case .byMaterial: "Por material"
         case .byPrice: "Por precio"
         case .byType: "Por tipo"
+        case .favoriteShoes: "Mis favoritos"
         }
     }
 }
@@ -40,7 +41,10 @@ enum MainSectionData {
     case byMaterial([GenericCarrouselSectionData])
     case byPrice([GenericCarrouselSectionData])
     case byType([GenericCarrouselSectionData])
+    case favoriteShoes
 }
+
+let FAVORITE_SHOE_KEY = "favoriteShoes"
 
 @Observable
 final class ShoesViewModel {
@@ -48,11 +52,20 @@ final class ShoesViewModel {
     let interactor: DataInteractor
     
     var mainSections = [MainSection]()
-    let shoes: [ShoeModel]
+    var shoes = [ShoeModel]()
     var selectedShoe: ShoeModel?
+    var favoriteShoes: [ShoeModel] {
+        self.shoes.filter { $0.isFavorite }
+    }
     
     @ObservationIgnored var errorMsg = ""
     var showAlert = false
+    
+    private var favoriteShoesIds = Set<ShoeModel>() {
+        didSet {
+            self.updateShoesAreFavorite()
+        }
+    }
     
     init(interactor: DataInteractor = Interactor()) {
         self.interactor = interactor
@@ -60,8 +73,8 @@ final class ShoesViewModel {
             let shoes = try self.interactor.getShoes()
             self.shoes = shoes
             self.mainSections = self.getSections(shoes)
+            self.loadFavoriteShoes()
         } catch {
-            self.shoes = []
             errorMsg = "Error loading JSON file \(error)."
             showAlert.toggle()
         }
@@ -90,7 +103,8 @@ final class ShoesViewModel {
             MainSection(order: 1, data: .byBrand(self.getSectionsByBrand(shoes))),
             MainSection(order: 2, data: .byMaterial(self.getSectionsByMaterial(shoes))),
             MainSection(order: 3, data: .byPrice(self.getSectionsByPrice(shoes))),
-            MainSection(order: 4, data: .byType(self.getSectionsByType(shoes)))]
+            MainSection(order: 4, data: .byType(self.getSectionsByType(shoes))),
+            MainSection(order: 5, data: .favoriteShoes)]
         if let shoe = shoes.randomElement() {
             sections.append(MainSection(order: 99, data: .beLucky(shoe)))
         }
@@ -142,5 +156,43 @@ final class ShoesViewModel {
                     title: typeOf,
                     shoes: shoes.filter { $0.typeOf == typeOf })
             }
+    }
+    
+    func toggleFavorite(shoe: ShoeModel) {
+        if self.favoriteShoesIds.contains(where: { $0.id == shoe.id }) {
+            self.removeFavorite(shoe: shoe)
+        } else {
+            self.addFavorite(shoe: shoe)
+        }
+    }
+    
+    private func addFavorite(shoe: ShoeModel) {
+        guard !self.favoriteShoesIds.contains(where: { $0.id == shoe.id }) else { return }
+        self.saveFavoriteShoes()
+        self.favoriteShoesIds.insert(shoe)
+        self.saveFavoriteShoes()
+    }
+    
+    private func removeFavorite(shoe: ShoeModel) {
+        self.favoriteShoesIds.remove(shoe)
+        self.saveFavoriteShoes()
+    }
+    
+    private func saveFavoriteShoes() {
+        self.interactor.saveFavoriteShoes(self.favoriteShoesIds.map(\.id))
+    }
+    
+    private func loadFavoriteShoes() {
+        let shoeIds = self.interactor.loadFavoriteShoes()
+        self.favoriteShoesIds = Set(self.shoes.filter { shoeIds.contains($0.id) })
+    }
+    
+    private func updateShoesAreFavorite() {
+        self.shoes = self.shoes.map { shoe in
+            var favoriteShoe = shoe
+            favoriteShoe.isFavorite = self.favoriteShoesIds.map(\.id).contains(shoe.id)
+            print("--> favoriteShoe.isFavorite: \(favoriteShoe.isFavorite)")
+            return favoriteShoe
+        }
     }
 }

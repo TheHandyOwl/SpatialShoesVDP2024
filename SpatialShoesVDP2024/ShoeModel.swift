@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ShoeModel: Identifiable, Hashable {
+struct ShoeModel: Identifiable, Hashable, Encodable {
     
     // MARK: properties
     let id: Int
@@ -25,6 +25,7 @@ struct ShoeModel: Identifiable, Hashable {
     let colors: [CustomColor]
     let warranty: Int
     let certifications: [String]
+    var isFavorite = false
     
     // MARK: enums
     enum Brand: String, Codable {
